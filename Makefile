@@ -3,7 +3,8 @@ CXXFLAGS = -Wall -g -Werror -Wpedantic -W
 
 TARGET = my_program
 
-SRC = main.cpp
+SRC = main_test.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(TARGET)
@@ -11,8 +12,9 @@ all: $(TARGET)
 $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-%.o: %.cpp
+%.o: %.cpp %.h
 	$(CXX) $(CXXFLAGS) -c $<
+
 
 clean:
 	rm -f $(OBJ) $(TARGET)
