@@ -11,14 +11,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Set up C++ compiler
-      uses: actions/setup-cpp@v1
+      - name: Build project using Makefile
+        run: make
 
-    - name: Build and test project using Makefile
-      run: |
-       make
