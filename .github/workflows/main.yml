@@ -22,9 +22,10 @@ jobs:
         sudo cmake .
         sudo make
         sudo make install
-    - name: Build project using Makefile
+    - name: Building project using Makefile
       run: make
-    - name: Run tests
+    - name: Running tests
       run: ./my_test
-
+    - name: Running program
+      run: ./my_program
 
